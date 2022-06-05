@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Amaranth"/>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<title>Yoi-home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<script defer src="js/home_info.js"></script>
+	
+</head>	
+	
+	<body>
+	<header>
+			<div>
+				<div class="logo">
+					<a href="index.html"><img src="images/logosvg.svg" alt="Yoi logo"></a>
+				</div>
+				<div class="hello">Hello Masa!</div>
+				<div class="home_message">Keep up with your meditation streak!</div>
+				<div class="profile">
+				<img src="images/User.svg" alt="Profile"></div>
+		  </div>
+		
+    	</header>
+		
+	<main>
+		<div class="wellnessbox"> 
+			<h2 class="wellnesslevel">Wellness levels</h2>
+			<button data-popup-target="#info_popup" class= "wellnessinfo1">
+			<img src="images/icons/info.svg" alt="info">
+			</button>
+			<div class="info_popup" id="info_popup">
+				<div class="info_header" id="info_header"> 
+				<div class="info_title"> Wellness levels</div>
+					<button data-close-button class="close-button">&times;</button>
+				</div>
+				<div class="info_body" id="info_body">
+					Wellness level is a personalized metric that descirbes your emotional state based on the detected moments of stress. A positive green bar represents a period of no/low stress and a negative red bar represents a period of considerable stress. These levels can be compared with your calendars to identify your stressors and take corrective measures.
+				</div>
+			</div>
+			<div id="info_overlay"></div>
+			<div class="chartbox">
+				
+				<div class="chart-home">
+	<canvas id="myChart"  width="100" height="75"></canvas>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js"></script>
+		<script src="js/plots.js"></script>
+	</div>
+			<div class="change">
+			<img src="images/icons/increase.svg" alt="" class="arrow">
+			<p id="average"> </p>
+				
+			<script>
+				document.getElementById("average").innerHTML = average()  + "%";
+			</script>
+			
+			<p id="comment"> above 
+				<br> baseline</p>
+			</div>
+			</div>
+	</div>
+		
+		<div class="tip">
+			<div class="tip_heading"> Yoi tip: </div>
+			<p class="tip_text" id="tip_text"> take a 5 minute brain break to re-energize. It helps! </p>
+			<button onclick="functionRefresh()" class="refresh">
+				<img src="images/icons/refresh.svg" alt="refresh">
+				</button>
+	  </div>
+
+		
+	<div class="Upcoming"> 
+			<h2 class="upcoming">Upcoming</h2>
+			<div class="upcominbox"> 
+			<p class= "Today">Today <br> 5:30 pm</p>
+			<div class="meditation">
+			<p class="upcomingactivity">Meditation <br> 50 mins</p>
+				</div>
+		  </div>
+			<button data-pass-target="#pass_popup" class= "button">
+			View Pass
+			</button>
+	  </div>
+		<div class="pass_popup" id="pass_popup">
+				<div class="pass_header" id="pass_header"> 
+				<div class="pass_title"> Wellness Pass</div>
+					<button data-close-button class="close-button">&times;</button>
+				</div>
+				<div class="pass_body" id="pass_body">
+					<img class="QRcode" src="images/QRcode.svg" alt="QR code">
+				<div class="nav">
+					<a class="pass_slot">			
+						<div class="pass_activity"> 
+							<p class= "activity_image"> <img src="images/icons/meditation.svg" alt=""></p>
+							<div class="activity_name">
+							<p class="activity_desc">Meditation <br> 50mins</p>
+							</div>
+						</div>
+						</a>
+					<a class="pass_slot">						
+						<div class="pass_activity"> 
+						<p class= "activity_image"> <img src="images/icons/meditation.svg" alt=""></p>
+						<div class="activity_name">
+						<p class="activity_desc">Meditation <br> 50mins</p>
+						</div>
+						</div>
+					</a>
+					<a class="pass_slot">
+						<div class="pass_activity"> 
+						<p class= "activity_image"> <img src="images/icons/meditation.svg" alt=""></p>
+						<div class="activity_name">
+						<p class="activity_desc">Meditation <br> 50mins</p>
+						</div>
+						</div>
+					</a>
+	  			</div>
+				</div>
+		</div>
+		
+	<div class="Giving"> 
+			<h2 class="upcoming">Giving</h2>
+			<div class="upcominbox"> 
+			<img src="images/icons/giving_box.svg" alt="" class="giving_image">
+		  	</div>
+		  		<button data-progress-target="#progress_popup" class= "button2">
+				View Progress
+				</button>
+		</div>
+		<div class="progress_popup" id="progress_popup">
+				<div class="progress_header" id="rogress_header"> 
+				<div class="progress_title"> Giving Program Progress </div>
+					<button data-close-button class="close-button">&times;</button>
+				</div>
+				<div class="progress_body" id="progress_body">
+					<img width="250px" src="images/icons/giving_box.svg" alt="giving">
+				</div>
+		</div>
+	
+	  </main>
+	<footer>
+				<div class="nav">
+				<a href="home.html" class="icon"><img src="images/icons/home_active.svg" alt=""></a>
+				<a href="trends.html" class="icon"><img src="images/icons/trends.svg" alt=""></a>
+				<a href="appointments.html" class="icon"><img src="images/icons/appointment.svg" alt=""></a>
+				<a href="giving.html" class="icon"><img src="images/icons/giving.svg" alt=""></a>
+	  </div>
+   	</footer>
+		
+	</body>
+	</html>
